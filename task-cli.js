@@ -1,6 +1,6 @@
 import fs from "fs";
 
-// 1. LOAD TASKS
+//  LOAD TASKS
 function loadTasks() {
   if (!fs.existsSync("tasks.json")) {
     fs.writeFileSync("tasks.json", "[]");
@@ -10,7 +10,7 @@ function loadTasks() {
   return JSON.parse(data);
 }
 
-// 2. SAVE TASKS
+//  SAVE TASKS
 function saveTasks(tasks) {
   fs.writeFileSync("tasks.json", JSON.stringify(tasks, null, 2));
 }
@@ -32,6 +32,11 @@ function addTask(description){
   console.log(`Task added successfully! (ID: ${newTask.id})`); 
 }
 
+function listTask(){
+  const tasks = loadTasks();
+  console.table(tasks);
+}
+
 const args = process.argv;
 const command = args[2];
 const input = args[3];
@@ -39,3 +44,9 @@ const input = args[3];
 if(command === "add"){
   addTask(input);
 }
+
+if(command === "list"){
+  listTask();
+}
+
+
