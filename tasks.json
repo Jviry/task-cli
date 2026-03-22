@@ -1,16 +1,1 @@
-[
-  {
-    "id": 1,
-    "description": "Buy Groceries",
-    "status": "todo",
-    "date_added": "2026-03-22T11:04:47.781Z",
-    "date_updated": "2026-03-22T11:04:47.783Z"
-  },
-  {
-    "id": 2,
-    "description": "Make key",
-    "status": "todo",
-    "date_added": "2026-03-22T11:04:58.084Z",
-    "date_updated": "2026-03-22T11:04:58.084Z"
-  }
-]
+[]
