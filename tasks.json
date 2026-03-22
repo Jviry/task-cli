@@ -1,1 +1,30 @@
-[]
+[
+  {
+    "id": 1,
+    "description": "Dont buy Groceries",
+    "status": "In Progress",
+    "date_added": "2026-03-22T15:16:33.418Z",
+    "date_updated": "2026-03-22T15:16:33.418Z"
+  },
+  {
+    "id": 2,
+    "description": "Silhig",
+    "status": "To Do",
+    "date_added": "2026-03-22T16:21:39.941Z",
+    "date_updated": "2026-03-22T16:21:39.944Z"
+  },
+  {
+    "id": 3,
+    "description": "Wow",
+    "status": "Done",
+    "date_added": "2026-03-22T16:21:47.176Z",
+    "date_updated": "2026-03-22T16:23:06.711Z"
+  },
+  {
+    "id": 4,
+    "description": "sex",
+    "status": "To Do",
+    "date_added": "2026-03-22T16:22:28.340Z",
+    "date_updated": "2026-03-22T16:22:28.340Z"
+  }
+]
