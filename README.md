@@ -51,7 +51,7 @@ Then do install npm
 
 ```json
 "bin": {
-  "task-cli": "./index.js"
+  "task-cli": "./task-cli.js"
 }
 ```
 2. Link the package globally:
