@@ -11,6 +11,14 @@
   "author": "",
   "license": "ISC",
   "bin": {
-    "task-cli": "./task-cli.js"
-  }
+    "task-cli": "task-cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jviry/task-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Jviry/task-cli/issues"
+  },
+  "homepage": "https://github.com/Jviry/task-cli#readme"
 }
