@@ -1,19 +1,28 @@
 #!/usr/bin/env node
 import fs from "fs";
+import path from "path";
+import os from "os";
+
+const TASKS_DIR = path.join(os.homedir(), ".tasks");
+const TASKS_FILE = path.join(TASKS_DIR, "tasks.json");
+
+if(!fs.existsSync(TASKS_DIR)){
+  fs.mkdirSync(TASKS_DIR, {recursive: true});
+}
 
 //  LOAD TASKS
 function loadTasks() {
-  if (!fs.existsSync("tasks.json")) {
-    fs.writeFileSync("tasks.json", "[]");
+  if (!fs.existsSync(TASKS_FILE)) {
+    fs.writeFileSync(TASKS_FILE, "[]");
   }
 
-  const data = fs.readFileSync("tasks.json", "utf-8");
+  const data = fs.readFileSync(TASKS_FILE, "utf-8");
   return JSON.parse(data);
 }
 
 //  SAVE TASKS
 function saveTasks(tasks) {
-  fs.writeFileSync("tasks.json", JSON.stringify(tasks, null, 2));
+  fs.writeFileSync(TASKS_FILE, JSON.stringify(tasks, null, 2));
 }
 
 function addTask(description){
@@ -108,42 +117,40 @@ function deleteTask(id){
   saveTasks(newTasks);
 }
 
-
-
 const args = process.argv;
 const command = args[2];
 const input = args[3];
 const input2 = args[4];
 
-if(command === "add"){
+if(command === "a"){
   addTask(input);
 }
 
-if(command === "list"){
-  if(input === "in-progress"){
+if(command === "ls"){
+  if(input === "ip"){
     listTaskInProgress();
-  }else if(input === "done"){
+  }else if(input === "d"){
     listDone();
-  }else if(input === "todo"){
+  }else if(input === "td"){
     listToDo();
   }else{
     listTask();
   }
 }
 
-if(command === "update"){
+if(command === "u"){
   updateTask(input, input2);
 }
 
-if(command === "delete"){
+if(command === "d"){
   deleteTask(input);
 }
 
-if(command === "mark-in-progress"){
+if(command === "mkip"){
   markInProgressTask(input);
 }
 
-if(command === "mark-done"){
+if(command === "mkd"){
   markDone(input);
 }
 
